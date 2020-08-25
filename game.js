@@ -42,16 +42,22 @@ function startGame() {
     timeup = false;
     setTimeout(() => {
         timeup = true;
-        Swal.fire(
-            'Good job!',
-            'You Did Great!',
-            'success'
-        )
+        if (score > 0) {
+            Swal.fire(
+                'Good job!',
+                'You Did Great!',
+                'success'
+            )
+        } else if (score === 0) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...You lose!',
+                text: 'Start over again',
+            })
+        }
     }, 20000);
 
-
 }
-
 
 
 function clickingHole(e) {
