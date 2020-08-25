@@ -42,12 +42,14 @@ function startGame() {
     timeup = false;
     setTimeout(() => {
         timeup = true;
+        // show the sccuess modal
         if (score > 0) {
             Swal.fire(
                 'Good job!',
                 'You Did Great!',
                 'success'
             )
+            // show the error modal
         } else if (score === 0) {
             Swal.fire({
                 icon: 'error',
