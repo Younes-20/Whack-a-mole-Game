@@ -1,0 +1,118 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+    background: #FF6F61 ;
+    overflow-x: hidden;
+}
+h1{
+    text-align: center;
+    font-size: 60px;
+    margin: 30px 20px auto auto;
+}
+.score{
+    padding: 10px 12px;
+    background-color: lightsalmon;
+    border-radius: 5px;
+    font-size: 60px;
+    color: black;
+
+}
+.container{
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.hole {
+    flex: 1 0 33.33%;
+    overflow: hidden;
+    position: relative;
+    
+
+}
+.hole:after{
+   display: block;
+   background: url(dirt.svg) bottom center no-repeat;
+   background-size: contain;
+   content: '';
+   width: 100%;
+   height:70px;
+   position: absolute;
+   z-index: 2;
+   bottom: -30px;
+     
+}
+.mole{
+    background: url(mole.svg) bottom center no-repeat;
+    background-size: 50%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+.hole.up .mole{
+    top: 0;
+}
+.btn{
+    text-align: center;
+    margin: 45px auto;
+}
+button{
+    border: 0;
+    outline: 0;
+    padding: 8px;
+    font-size: 20px;
+    width: 140px;
+    height: 45px;
+    background: #eee;
+    color: #333;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.2);
+}
+.button:active{
+    transform: translateY(4px);
+}
+
+
+@media (max-width: 600px){
+    h1{
+        text-align: center;
+        font-size: 30px;
+        margin: 30px auto;
+    }
+    .score{
+        padding: 10px 12px;
+        font-size: 30px;
+        color: black;
+    
+    }
+    .container{
+        display: grid;
+        grid-template-columns: repeat(2, 140px);
+         margin: 0px auto;
+        justify-content: center;
+         width: 100%;
+        padding-bottom: 5px;
+    }
+    .btn{
+        text-align: center;
+        margin: 20px auto;
+    }
+    .mole{
+        background-size: 60%;
+        width: 90%;
+        height: 100%;
+        top: 100%;
+        transition: all 0.4s;
+        cursor: pointer;
+    }
+    .swal2-popup {
+        font-size: 0.7rem;
+        }
+}
