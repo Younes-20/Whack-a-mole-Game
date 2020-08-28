@@ -52,7 +52,7 @@ function startGame() {
             // show the error modal
         } else if (score === 0) {
             Swal.fire({
-                icon: 'Error',
+                icon: 'error',
                 title: 'Oops...You lose!',
                 text: 'Start over again',
             })
